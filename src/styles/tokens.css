@@ -1,0 +1,12 @@
+/* 🎨 Couleurs et polices de l'île : modifie ici, tout le site suit. */
+:root {
+  --cream: #fff6dc;   --cream-edge: #f3e3b8;
+  --yellow: #ffd84a;  --pink: #f2a7b0;  --pink-soft: #f8c9d0;
+  --sage: #9ccb9a;    --leaf: #6fbf73;  --teal: #3ec6b4;
+  --wood: #8b6a4a;    --wood-dark: #6b4f36; --stripe: #f6c27a;
+  --sky: #bfe6f2;
+  --font-title: "Fredoka", "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --radius-lg: 28px; --radius-pill: 999px;
+  --shadow-soft: 0 6px 0 rgba(139,106,74,.18), 0 14px 28px rgba(60,40,20,.14);
+}

@@ -1,0 +1,41 @@
+*,*::before,*::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-body); font-weight: 600; color: var(--wood); background: var(--sage); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.has-glove, .has-glove * { cursor: none !important; }
+
+/* Panneau crème (réf. Agenda / passeport) */
+.ac-panel { position: relative; background: var(--cream); border: 4px solid var(--cream-edge); border-radius: var(--radius-lg);
+  padding: 2.4rem 1.6rem 1.4rem; box-shadow: var(--shadow-soft); animation: ac-open .45s cubic-bezier(.3,1.6,.5,1) both; }
+.ac-panel__title { position: absolute; top: -1.1rem; left: 50%; translate: -50% 0; margin: 0; background: var(--yellow);
+  padding: .25rem 1.6rem; border-radius: var(--radius-pill); font: 600 1.3rem var(--font-title); color: var(--wood-dark); box-shadow: 0 4px 0 rgba(139,106,74,.2); }
+@keyframes ac-open { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Entrées de menu : surlignage jaune ondulé */
+.ac-menu { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.ac-menu button { all: unset; font: 600 1.15rem var(--font-title); color: var(--wood-dark); padding: .1rem .3rem;
+  text-decoration: underline wavy var(--yellow) 3px; text-underline-offset: 7px; transition: transform .15s; }
+.ac-menu button:hover, .ac-menu button:focus-visible { transform: translateX(6px) scale(1.04); }
+
+/* Pastilles (réf. passeport / slides) */
+.ac-pill { display: inline-block; padding: .3rem 1rem; border-radius: var(--radius-pill); font: 600 .95rem var(--font-title);
+  background: var(--pink); color: #fff; transition: transform .2s cubic-bezier(.3,1.8,.5,1); }
+.ac-pill--wood { background: var(--wood); } .ac-pill--teal { background: var(--teal); } .ac-pill--yellow { background: var(--yellow); color: var(--wood-dark); }
+.ac-pill:hover { transform: scale(1.1) rotate(-2deg); }
+
+/* Bulle de dialogue (réf. bulle rayée orange/blanc + pastille de nom à damier) */
+.ac-dialog { position: relative; max-width: 640px; padding: 7px; border-radius: 46px; cursor: pointer;
+  background: repeating-linear-gradient(135deg, var(--stripe) 0 12px, #fff 12px 24px); box-shadow: var(--shadow-soft);
+  animation: ac-open .4s cubic-bezier(.3,1.6,.5,1) both; }
+.ac-dialog__body { background: var(--cream); border-radius: 40px; padding: 1.8rem 2.2rem 1.5rem; min-height: 7.5rem; font-size: 1.15rem; line-height: 1.6; color: var(--wood-dark); }
+.ac-dialog__body p { margin: 0; }
+.ac-dialog__name { position: absolute; top: -1.2rem; left: 1.6rem; z-index: 1; padding: .2rem 1.5rem; border-radius: var(--radius-pill);
+  font: 600 1.1rem var(--font-title); color: var(--wood-dark); border: 3px solid #fff;
+  background: repeating-conic-gradient(var(--pink) 0 25%, var(--pink-soft) 0 50%) 0 0 / 12px 12px; }
+.ac-dialog__next { position: absolute; right: 2rem; bottom: 1.1rem; color: var(--stripe); animation: ac-bob .8s ease-in-out infinite alternate; }
+@keyframes ac-bob { to { transform: translateY(5px); } }
+
+/* Curseur-gant */
+.ac-glove { position: fixed; left: 0; top: 0; z-index: 9999; pointer-events: none; will-change: transform; transition: scale .12s; }
+.ac-glove.is-down { scale: .85; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
