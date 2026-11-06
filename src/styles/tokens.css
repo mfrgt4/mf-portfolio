@@ -10,3 +10,4 @@
   --radius-lg: 28px; --radius-pill: 999px;
   --shadow-soft: 0 6px 0 rgba(139,106,74,.18), 0 14px 28px rgba(60,40,20,.14);
 }
+:root { --leaves: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M12 44c0-16 13-27 30-27 0 16-12 29-30 27z' fill='%23fff' fill-opacity='.35'/%3E%3C/svg%3E"); }

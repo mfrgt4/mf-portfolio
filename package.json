@@ -3,12 +3,18 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "scripts": { "dev": "vite", "build": "tsc --noEmit && vite build", "preview": "vite preview" },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@fontsource/fredoka": "^5.1.0",
     "@fontsource/nunito": "^5.1.0",
+    "lucide-react": "^0.468.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "simple-icons": "^16.36.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

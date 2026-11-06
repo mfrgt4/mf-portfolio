@@ -3,6 +3,8 @@ import "@fontsource/nunito/600.css";
 import "@fontsource/nunito/800.css";
 import "./styles/tokens.css";
 import "./styles/ui.css";
+import "./styles/sections.css";
+import "./styles/cursor.css";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 createRoot(document.getElementById("root")!).render(<App />);
