@@ -15,7 +15,7 @@ export default function Collab() {
     <div ref={ref} className="reveal co">
       <h2 className="sec-title"><span>Travaillons ensemble !</span></h2>
       <p className="co-lead">Un projet, une idée ou un stage à construire ? Venez en discuter, je réponds avec plaisir.</p>
-      <div className="co-grid">
+      <div className="co-grid stagger">
         {items.map(({ label, href, Icon, c, ext }, i) => (
           <a key={label} href={href} className={`co-card${ping === i ? " ping" : ""}`} style={{ "--c": c } as CSSProperties}
             {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})} onMouseEnter={() => sfx.blip()}

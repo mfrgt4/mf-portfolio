@@ -22,7 +22,7 @@ export default function Skills() {
           const a = -Math.PI / 2 + (i / skills.length) * Math.PI * 2, Icon = ICONS[k.title] ?? Sparkles;
           return (
             <button key={k.title} className={`sk-bubble${active === i ? " on" : ""}`} aria-pressed={active === i}
-              style={{ left: `${50 + Math.cos(a) * 38}%`, top: `${50 + Math.sin(a) * 38}%`, "--c": COLORS[i % 5], "--f": `${i * -0.8}s` } as React.CSSProperties}
+              style={{ left: `${50 + Math.cos(a) * 38}%`, top: `${50 + Math.sin(a) * 38}%`, "--c": COLORS[i % 5], "--f": `${i * -0.8}s`, "--n": i } as React.CSSProperties}
               onPointerDown={(e) => { ptr.current = e.pointerType; }}
               onPointerEnter={(e) => e.pointerType === "mouse" && show(i)} onPointerLeave={(e) => e.pointerType === "mouse" && show(null)}
               onFocus={() => show(i)} onBlur={() => show(null)}

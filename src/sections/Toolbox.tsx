@@ -34,7 +34,11 @@ export default function Toolbox() {
           })}
         </ul>
         <button className="tb-box" onClick={toggle} aria-expanded={open} aria-label={open ? "Ranger la boîte à outils" : "Ouvrir la boîte à outils"}>
-          <img src="/images/toolbox.png" alt={`Boîte à outils de ${profile.name}`} />
+          <span className="tb-art">
+            <img className="tb-body" src="/images/toolbox.png" alt={`Boîte à outils de ${profile.name}`} />
+            <span className="tb-inside" />
+            <img className="tb-lid" src="/images/toolbox.png" alt="" aria-hidden />
+          </span>
         </button>
         <span className="tb-hint">{open ? "Clique pour ranger" : "Clique pour ouvrir !"}</span>
       </div>

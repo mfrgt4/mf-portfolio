@@ -10,20 +10,23 @@ export default function About() {
     ["Ville", city], ["Objectif", goal], ["Rôles", profile.roles.slice(0, 3).join(" · "), true],
   ];
   return (
-    <div ref={ref} className="reveal id-wrap">
-      <article className="id-card" aria-label="Carte d'identité">
-        <div>
-          <div className="id-photo"><img src={profile.photo} alt={`Portrait de ${profile.name}`} /></div>
-          <div className="id-name"><small>Nom</small>{profile.name}</div>
+    <>
+      <h2 className="sec-title"><span>À propos</span></h2>
+      <div ref={ref} className="reveal id-wrap">
+        <article className="id-card" aria-label="Carte d'identité">
+          <div>
+            <div className="id-photo"><img src={profile.photo} alt={`Portrait de ${profile.name}`} /></div>
+            <div className="id-name"><small>Nom</small>{profile.name}</div>
+          </div>
+          <dl className="id-fields stagger">
+            {fields.map(([k, v, wide]) => <div key={k} className={`id-field${wide ? " wide" : ""}`}><dt>{k}</dt><dd>{v}</dd></div>)}
+          </dl>
+        </article>
+        <div className="speech">
+          <span className="speech-name">{profile.name.split(" ")[0]}</span>
+          {about.map((p) => <p key={p}>{p}</p>)}
         </div>
-        <dl className="id-fields">
-          {fields.map(([k, v, wide]) => <div key={k} className={`id-field${wide ? " wide" : ""}`}><dt>{k}</dt><dd>{v}</dd></div>)}
-        </dl>
-      </article>
-      <div className="ac-dialog speech">
-        <span className="ac-dialog__name">{profile.name.split(" ")[0]}</span>
-        <div className="ac-dialog__body">{about.map((p) => <p key={p}>{p}</p>)}</div>
       </div>
-    </div>
+    </>
   );
 }

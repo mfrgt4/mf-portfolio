@@ -49,6 +49,8 @@ export type Project = {
   fit?: "contain";
   collaboration?: "Projet individuel" | "Projet en équipe";
   thumbnail?: string;
+  island?: { x: number; y: number }; // position sur la carte, en % de l'image (optionnel : sinon placement automatique)
+  context?: string; goals?: string; role?: string; solutions?: string; result?: string; // sections de fiche (affichées si renseignées)
 };
 export const projectUrl = (p: Project) => p.link ?? (p.href && p.href !== "#" ? p.href : undefined);
 export const categories = [["perso", "Projets personnels"], ["universitaire", "Projets universitaires"]] as const;

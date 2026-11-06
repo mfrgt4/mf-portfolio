@@ -38,4 +38,3 @@ body { margin: 0; font-family: var(--font-body); font-weight: 600; color: var(--
 .ac-glove { position: fixed; left: 0; top: 0; z-index: 9999; pointer-events: none; will-change: transform; transition: scale .12s; }
 .ac-glove.is-down { scale: .85; }
 
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
